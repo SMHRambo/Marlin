@@ -66,6 +66,10 @@
   #include "../../feature/repeat.h"
 #endif
 
+#if ENABLED(MATERIALMANAGER)
+  #include "menu_materialmanager.h"
+#endif
+
 void menu_tune();
 void menu_cancelobject();
 void menu_motion();
@@ -348,6 +352,10 @@ void menu_main() {
 
   #if ENABLED(MMU2_MENUS)
     if (!busy) SUBMENU(MSG_MMU2_MENU, menu_mmu2);
+  #endif
+
+  #if ENABLED(MATERIALMANAGER)
+    SUBMENU(MSG_MATERIALMANAGER_MENU, menu_materialmanager);
   #endif
 
   SUBMENU(MSG_CONFIGURATION, menu_configuration);

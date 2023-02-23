@@ -742,6 +742,8 @@ namespace Language_en {
   LSTR MSG_MMU2_RESETTING                 = _UxGT("MMU Resetting...");
   LSTR MSG_MMU2_EJECT_RECOVER             = _UxGT("Remove, click");
 
+  LSTR MSG_MATERIALMANAGER_MENU           = _UxGT("Material Manager");
+
   LSTR MSG_MIX                            = _UxGT("Mix");
   LSTR MSG_MIX_COMPONENT_N                = _UxGT("Component =");
   LSTR MSG_MIXER                          = _UxGT("Mixer");

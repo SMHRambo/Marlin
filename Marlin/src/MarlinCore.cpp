@@ -228,6 +228,10 @@
   #include "feature/mmu/mmu2.h"
 #endif
 
+#if ENABLED(MATERIALMANAGER)
+  #include "feature/materialmanager/materialmanager.h"
+#endif
+
 #if ENABLED(PASSWORD_FEATURE)
   #include "feature/password/password.h"
 #endif

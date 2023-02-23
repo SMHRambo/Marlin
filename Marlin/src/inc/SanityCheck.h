@@ -1183,6 +1183,15 @@ static_assert(Y_MAX_LENGTH >= Y_BED_SIZE, "Movement bounds (Y_MIN_POS, Y_MAX_POS
 #endif
 
 /**
+ * Material Manager
+ */
+#if ENABLED(MATERIALMANAGER)
+  #ifndef HAS_MARLINUI_MENU
+    #error "MATERIALMANAGER requires an LCD supporting MarlinUI."
+  #endif
+#endif
+
+/**
  * Options only for EXTRUDERS > 1
  */
 #if HAS_MULTI_EXTRUDER
