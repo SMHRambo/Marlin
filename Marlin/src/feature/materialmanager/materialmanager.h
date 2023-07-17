@@ -23,6 +23,37 @@
 
 #include "../../inc/MarlinConfig.h"
 
+/**
+ * Material Profile
+ * Name:
+ * Type: [ABS,PLA,PETG,NYLAN,PC,TPE,TPU,HIPS,PVA,PTG]
+ * Temperatur:
+ *  Printing:
+ *    Tool:
+ *    Bed:
+ *    Chamber
+ *  Preheat:
+ *    Tool:
+ *    Bed:
+ *    Chamber:
+ *  Pause:
+ *    Tool:
+ *    Bed:
+ *    Chamber:
+ * Retraction:
+ *  Raise:
+ *  Length:
+ *  Feedrate:
+ *  Recovery:
+ *    Length:
+ *    Feedrate:
+ * Feedrate:
+ *  Max:
+ *  Factor:
+ * Extrution:
+ *  Factor:
+ */
+
 class MaterialManager {
 public:
   MaterialManager();

@@ -28,10 +28,40 @@
 #include "../../feature/materialmanager/materialmanager.h"
 #include "menu_materialmanager.h"
 #include "menu_item.h"
+#include <ArduinoJson.h>
 
 void menu_materialmanager() {
   START_MENU();
+
   BACK_ITEM(MSG_MAIN);
+  END_MENU();
+}
+
+void menu_materialmanager_materiallist() {
+  ui.encoder_direction_menus();
+
+  card.cd("/materialmanager");
+
+  #if HAS_MARLINUI_U8GLIB
+    static uint16_t fileCnt;
+    if (ui.first_page) fileCnt = card.get_num_Files();
+  #else
+    const uint16_t fileCnt = card.get_num_Files();
+  #endif
+
+  START_MENU();
+  if (ui.should_draw()) for (uint16_t i = 0; i < fileCnt; i++) {
+    if (_menuLineNr == _thisItemNr) {
+      card.getfilename_sorted(SD_ORDER(i, fileCnt));
+      if (!card.flag.filenameIsDir) {
+        if (file.isOpened) {
+          FileStream jsonStream(file);
+        }
+      }
+    }
+    else
+      SKIP_ITEM();
+  }
   END_MENU();
 }
 
